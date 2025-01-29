@@ -21,7 +21,7 @@
             min-height: 100vh;
             padding: 0;
             margin: 0;
-            overflow: hidden; /* Prevent scrolling */
+            overflow: auto; /* Allow scrolling when needed */
         }
 
         .container {
@@ -35,6 +35,7 @@
             flex-direction: column;
             justify-content: space-between;
             padding: 10px;
+            overflow-y: auto; /* Allow scrolling inside the container */
         }
 
         .header {
@@ -62,11 +63,11 @@
 
         .numbers {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid */
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: 5px;
             flex-grow: 1;
             padding: 5px;
-            overflow-y: auto; /* Allow scrolling within the numbers section if needed */
+            overflow-y: auto; /* Allow scrolling if numbers exceed space */
         }
 
         .number {
@@ -80,9 +81,9 @@
             justify-content: start;
         }
 
-        /* Make Channel 4 span full width on smaller screens */
+        /* Ensure "Channel 4" spans full width on smaller screens */
         .channel-4 {
-            grid-column: 1 / -1; /* Span all columns */
+            grid-column: 1 / -1;
             justify-content: center;
         }
 
