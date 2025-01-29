@@ -30,7 +30,7 @@
             border-radius: 10px;
             width: 100%;
             max-width: 600px;
-            min-height: 100vh; /* Ensure full viewport height */
+            height: 100vh; /* Full viewport height */
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -71,10 +71,11 @@
 
         .numbers {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 2 columns when possible */
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid */
             gap: 5px;
             flex-grow: 1;
             padding: 5px;
+            overflow-y: auto; /* Allow scrolling within the numbers section if needed */
         }
 
         .number {
@@ -88,9 +89,9 @@
             justify-content: start;
         }
 
-        /* Make Channel 4 span full width */
+        /* Make Channel 4 span full width on smaller screens */
         .channel-4 {
-            grid-column: span 2;
+            grid-column: 1 / -1; /* Span all columns */
             justify-content: center;
         }
 
@@ -124,6 +125,39 @@
             background: #d32f2f;
             color: white;
             flex-shrink: 0;
+        }
+
+        /* Media Queries for Smaller Screens */
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 16px;
+            }
+
+            .header p {
+                font-size: 10px;
+            }
+
+            .instruction {
+                font-size: 10px;
+            }
+
+            .numbers {
+                grid-template-columns: 1fr; /* Single column on small screens */
+            }
+
+            .number {
+                font-size: 11px;
+            }
+
+            .icon {
+                width: 25px;
+                height: 25px;
+                font-size: 12px;
+            }
+
+            .info {
+                font-size: 12px;
+            }
         }
     </style>
 </head>
@@ -185,7 +219,7 @@
                 </div>
             </div>
 
-            <!-- Channel 4 now spans full width -->
+            <!-- Channel 4 spans full width -->
             <div class="number channel-4">
                 <div class="icon">📡</div>
                 <div class="info">
