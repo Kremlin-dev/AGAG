@@ -18,10 +18,10 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
+            height: 100vh;
+            overflow: hidden; /* Prevents scrolling */
             padding: 0;
             margin: 0;
-            overflow: auto; /* Allow scrolling when needed */
         }
 
         .container {
@@ -30,78 +30,58 @@
             border-radius: 10px;
             width: 100%;
             max-width: 600px;
-            min-height: 100vh; /* Ensure it fills the screen */
+            height: 95vh; /* Prevents overflow while fitting everything */
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            padding: 10px;
-            overflow-y: auto; /* Allow scrolling inside the container */
+            padding: 5px;
         }
 
-        .header {
+        .header, .footer {
             background: #d32f2f;
             color: #ffffff;
             text-align: center;
-            padding: 8px;
+            padding: 5px;
+            font-size: 12px;
             flex-shrink: 0;
-        }
-
-        .header h1 {
-            font-size: 18px;
-        }
-
-        .header p {
-            font-size: 11px;
         }
 
         .instruction {
             text-align: center;
             font-size: 11px;
-            padding: 5px;
+            padding: 4px;
             color: #555;
         }
 
         .numbers {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 5px;
+            grid-template-columns: repeat(2, 1fr); /* Organizes into two columns */
+            gap: 4px;
             flex-grow: 1;
-            padding: 0px;
-            overflow-y: auto; /* Allow scrolling if numbers exceed space */
+            padding: 5px;
         }
 
         .number {
             display: flex;
             align-items: center;
             background: #f4f4f4;
-            padding: 8px;
+            padding: 6px;
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            font-size: 12px;
-            justify-content: start;
-        }
-
-        /* Ensure "Channel 4" spans full width on smaller screens */
-        .channel-4 {
-            grid-column: 1 / -1;
-            justify-content: center;
+            font-size: 11px;
         }
 
         .icon {
-            width: 30px;
-            height: 30px;
+            width: 24px;
+            height: 24px;
             background: #d32f2f;
             color: white;
             display: flex;
             justify-content: center;
             align-items: center;
             border-radius: 50%;
-            font-size: 14px;
-            margin-right: 8px;
-        }
-
-        .info {
-            font-size: 13px;
+            font-size: 12px;
+            margin-right: 6px;
         }
 
         .info a {
@@ -110,22 +90,19 @@
             font-weight: bold;
         }
 
-        .footer {
-            text-align: center;
-            padding: 8px;
-            font-size: 11px;
-            background: #d32f2f;
-            color: white;
-            flex-shrink: 0;
+        .channel-4 {
+            grid-column: span 2; /* Spans across both columns */
+            justify-content: center;
         }
 
         @media (max-width: 480px) {
-            .header h1 {
-                font-size: 16px;
+            .numbers {
+                grid-template-columns: repeat(2, 1fr); /* Keeps 2-column layout for small screens */
             }
 
-            .header p {
+            .header, .footer {
                 font-size: 10px;
+                padding: 3px;
             }
 
             .instruction {
@@ -133,17 +110,14 @@
             }
 
             .number {
-                font-size: 11px;
+                font-size: 10px;
+                padding: 5px;
             }
 
             .icon {
-                width: 25px;
-                height: 25px;
-                font-size: 12px;
-            }
-
-            .info {
-                font-size: 12px;
+                width: 22px;
+                height: 22px;
+                font-size: 10px;
             }
         }
     </style>
