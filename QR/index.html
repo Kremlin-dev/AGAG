@@ -21,6 +21,7 @@
             height: 100vh;
             padding: 0;
             margin: 0;
+            overflow: hidden; /* Prevent scrolling */
         }
 
         .container {
@@ -29,10 +30,20 @@
             border-radius: 10px;
             width: 100%;
             max-width: 600px;
-            min-height: 100vh;
+            min-height: 100vh; /* Ensure full viewport height */
             display: flex;
             flex-direction: column;
-            padding: 10px 0; /* Reduce padding to push content up */
+            justify-content: space-between;
+            padding: 10px;
+        }
+
+        .main-logo {
+            text-align: center;
+            padding: 5px;
+        }
+
+        .main-logo img {
+            max-width: 80px;
         }
 
         .header {
@@ -48,23 +59,22 @@
         }
 
         .header p {
-            font-size: 12px;
+            font-size: 11px;
         }
 
         .instruction {
             text-align: center;
-            font-size: 12px;
+            font-size: 11px;
             padding: 5px;
             color: #555;
         }
 
         .numbers {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 2 columns when possible */
             gap: 5px;
             flex-grow: 1;
             padding: 5px;
-            overflow-y: auto;
         }
 
         .number {
@@ -78,6 +88,7 @@
             justify-content: start;
         }
 
+        /* Make Channel 4 span full width */
         .channel-4 {
             grid-column: span 2;
             justify-content: center;
@@ -109,24 +120,19 @@
         .footer {
             text-align: center;
             padding: 8px;
-            font-size: 12px;
+            font-size: 11px;
             background: #d32f2f;
             color: white;
             flex-shrink: 0;
-        }
-
-        @media (max-width: 480px) {
-            .numbers {
-                grid-template-columns: 1fr;
-            }
-            .channel-4 {
-                grid-column: span 1;
-            }
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <div class="main-logo">
+            <img src="./images/OIP.jpg" alt="Main Logo">
+        </div>
+
         <div class="header">
             <h1>Emergency Contact Numbers</h1>
             <p>Ambulance | Fire | Rescue | Security</p>
@@ -179,6 +185,7 @@
                 </div>
             </div>
 
+            <!-- Channel 4 now spans full width -->
             <div class="number channel-4">
                 <div class="icon">📡</div>
                 <div class="info">
