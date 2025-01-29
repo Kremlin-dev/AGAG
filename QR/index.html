@@ -18,112 +18,128 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            padding: 10px;
+            min-height: 100vh;
+            overflow: hidden; /* Prevent scrolling on the body */
         }
 
         .container {
             background: #ffffff;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
-            width: 100%;
-            max-width: 400px;
-            padding: 10px;
+            width: 95%; /* Occupy most of the screen */
+            max-width: 600px;
+            height: 95vh; /* Occupy most of the screen height */
             display: flex;
             flex-direction: column;
-            text-align: center;
+            overflow: hidden; /* Prevent scrolling within the container */
         }
 
         .header {
             background: #d32f2f;
             color: #ffffff;
+            text-align: center;
             padding: 8px;
-            border-radius: 5px;
+            flex-shrink: 0;
         }
 
         .header h1 {
-            font-size: 16px;
+            font-size: 18px;
+        }
+
+        .header p {
+            font-size: 11px;
         }
 
         .instruction {
-            font-size: 12px;
-            margin: 8px 0;
+            text-align: center;
+            font-size: 11px;
+            padding: 5px;
+            color: #555;
+            flex-shrink: 0;
         }
 
         .numbers {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: 5px;
-            padding: 5px 0;
+            flex-grow: 1; /* Allow numbers to take up available space */
+            padding: 10px; /* Add some padding */
+            overflow: hidden; /* Hide any content that overflows */
         }
 
         .number {
             display: flex;
             align-items: center;
             background: #f4f4f4;
-            padding: 5px;
+            padding: 8px;
             border-radius: 5px;
-            font-size: 12px;
-            justify-content: center;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            font-size: 12px;
+            justify-content: start;
+        }
+
+        .channel-4 {
+            grid-column: 1 / -1;
+            justify-content: center;
         }
 
         .icon {
-            width: 20px;
-            height: 20px;
+            width: 30px;
+            height: 30px;
             background: #d32f2f;
             color: white;
             display: flex;
             justify-content: center;
             align-items: center;
             border-radius: 50%;
-            font-size: 10px;
-            margin-right: 5px;
+            font-size: 14px;
+            margin-right: 8px;
+        }
+
+        .info {
+            font-size: 13px;
         }
 
         .info a {
             text-decoration: none;
             color: #d32f2f;
             font-weight: bold;
-            font-size: 12px;
-        }
-
-        .channel-4 {
-            grid-column: span 2;
-            justify-content: center;
-            font-size: 12px;
         }
 
         .footer {
-            font-size: 10px;
-            padding: 5px;
+            text-align: center;
+            padding: 8px;
+            font-size: 11px;
             background: #d32f2f;
             color: white;
-            border-radius: 5px;
-            margin-top: 5px;
+            flex-shrink: 0;
         }
 
         @media (max-width: 480px) {
-            .container {
-                max-width: 350px;
+            .header h1 {
+                font-size: 16px;
             }
 
-            .header h1 {
-                font-size: 14px;
+            .header p {
+                font-size: 10px;
+            }
+
+            .instruction {
+                font-size: 10px;
             }
 
             .number {
                 font-size: 11px;
             }
 
-            .info a {
-                font-size: 11px;
+            .icon {
+                width: 25px;
+                height: 25px;
+                font-size: 12px;
             }
 
-            .icon {
-                width: 18px;
-                height: 18px;
-                font-size: 9px;
+            .info {
+                font-size: 12px;
             }
         }
     </style>
@@ -132,46 +148,67 @@
     <div class="container">
         <div class="header">
             <h1>Emergency Contact Numbers</h1>
+            <p>Ambulance | Fire | Rescue | Security</p>
         </div>
 
         <div class="instruction">
-            <b>Tap a number to call in an emergency.</b>
+            <b>Click on the numbers below to call directly in case of an emergency.</b>
         </div>
 
         <div class="numbers">
             <div class="number">
                 <div class="icon">☎️</div>
-                <div class="info"><a href="tel:0322091333">0322 091 333</a></div>
+                <div class="info">
+                    <a href="tel:0322091333">0322 091 333</a> - Landline/Mobile
+                </div>
             </div>
+
             <div class="number">
                 <div class="icon">📞</div>
-                <div class="info"><a href="tel:800">800</a></div>
+                <div class="info">
+                    <a href="tel:800">800</a> - AGAG Landline
+                </div>
             </div>
+
             <div class="number">
                 <div class="icon">📲</div>
-                <div class="info"><a href="tel:0800400002">0800 400 002</a></div>
+                <div class="info">
+                    <a href="tel:0800400002">0800 400 002</a> - Toll Free/Mobile
+                </div>
             </div>
+
             <div class="number">
                 <div class="icon">🔒</div>
-                <div class="info"><a href="tel:0556582933">0556 582 933</a></div>
+                <div class="info">
+                    <a href="tel:0556582933">0556 582 933</a> - Security
+                </div>
             </div>
+
             <div class="number">
                 <div class="icon">🔒</div>
-                <div class="info"><a href="tel:0322296756">0322 296 756</a></div>
+                <div class="info">
+                    <a href="tel:0322296756">0322 296 756</a> - Security
+                </div>
             </div>
+
             <div class="number">
                 <div class="icon">🔒</div>
-                <div class="info"><a href="tel:0322296755">0322 296 755</a></div>
+                <div class="info">
+                    <a href="tel:0322296755">0322 296 755</a> - Security
+                </div>
             </div>
+
             <div class="number channel-4">
                 <div class="icon">📡</div>
-                <div class="info"><b>Channel 4 - Two-Way Radio</b></div>
+                <div class="info">
+                    <b>Channel 4 - Two-Way Radio</b>
+                </div>
             </div>
         </div>
 
         <div class="footer">
             <strong>SENIOR MANAGER - HUMAN RESOURCES</strong>
-            <p>No prank calls. Emergencies only.</p>
+            <p>Please avoid prank calls. This service is for emergencies only.</p>
         </div>
     </div>
 </body>
