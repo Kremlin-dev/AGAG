@@ -19,9 +19,9 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            overflow: hidden; /* Prevents scrolling */
             padding: 0;
             margin: 0;
+            overflow: hidden;
         }
 
         .container {
@@ -30,16 +30,16 @@
             border-radius: 10px;
             width: 100%;
             max-width: 600px;
-            height: 95vh; /* Prevents overflow while fitting everything */
+            height: 100vh; /* Ensures it fills the screen */
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
             padding: 5px;
+            overflow-y: auto; /* Allows slight scrolling */
         }
 
         .header, .footer {
             background: #d32f2f;
-            color: #ffffff;
+            color: white;
             text-align: center;
             padding: 5px;
             font-size: 12px;
@@ -55,9 +55,9 @@
 
         .numbers {
             display: grid;
-            grid-template-columns: repeat(2, 1fr); /* Organizes into two columns */
+            grid-template-columns: repeat(2, 1fr);
             gap: 4px;
-            flex-grow: 1;
+            flex-grow: 1; /* Keeps it flexible */
             padding: 5px;
         }
 
@@ -91,22 +91,23 @@
         }
 
         .channel-4 {
-            grid-column: span 2; /* Spans across both columns */
+            grid-column: span 2; /* Ensures it spans both columns */
             justify-content: center;
         }
 
         @media (max-width: 480px) {
-            .numbers {
-                grid-template-columns: repeat(2, 1fr); /* Keeps 2-column layout for small screens */
-            }
-
             .header, .footer {
                 font-size: 10px;
-                padding: 3px;
+                padding: 4px;
             }
 
             .instruction {
                 font-size: 10px;
+            }
+
+            .numbers {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 3px;
             }
 
             .number {
