@@ -33,7 +33,7 @@
         }
 
         .logo {
-            width: 80px; /* Adjust size as needed */
+            width: 80px;
             margin: 0 auto 10px;
         }
 
@@ -43,7 +43,7 @@
             padding: 12px;
             border-radius: 5px;
             font-size: 16px;
-            margin-top: 10px; /* Push it slightly down */
+            margin-top: 10px;
         }
 
         .instruction {
@@ -82,7 +82,13 @@
             border-radius: 50%;
             font-size: 14px;
             margin-right: 10px;
-            flex-shrink: 0; /* Ensure icons stay aligned */
+            flex-shrink: 0;
+        }
+
+        .info {
+            display: flex;
+            align-items: center;
+            width: 100%;
         }
 
         .info a {
@@ -90,11 +96,7 @@
             color: #d32f2f;
             font-weight: bold;
             font-size: 15px;
-        }
-
-        .channel-4 {
-            font-size: 14px;
-            justify-content: center;
+            margin-right: 5px;
         }
 
         .footer {
@@ -144,7 +146,7 @@
 </head>
 <body>
     <div class="container">
-        <img src="logo.png" alt="Company Logo" class="logo"> <!-- Add your logo here -->
+        <img src="./images/OIP.jpg" alt="Company Logo" class="logo"> <!-- Add your logo here -->
 
         <div class="header">Emergency Contact Numbers</div>
 
@@ -152,32 +154,46 @@
 
         <div class="numbers">
             <div class="number">
-                <div class="icon">☎️</div>
-                <div class="info"><a href="tel:0322091333">0322 091 333</a></div>
+                <div class="icon">🚑</div>
+                <div class="info">
+                    <a href="tel:0322091333">0322 091 333</a> - Landline/Mobile
+                </div>
             </div>
             <div class="number">
                 <div class="icon">📞</div>
-                <div class="info"><a href="tel:800">800</a></div>
+                <div class="info">
+                    <a href="tel:800">800</a> - AGAG Landline
+                </div>
             </div>
             <div class="number">
                 <div class="icon">📲</div>
-                <div class="info"><a href="tel:0800400002">0800 400 002</a></div>
+                <div class="info">
+                    <a href="tel:0800400002">0800 400 002</a> - Toll-Free / Mobile
+                </div>
             </div>
             <div class="number">
                 <div class="icon">🔒</div>
-                <div class="info"><a href="tel:0556582933">0556 582 933</a></div>
+                <div class="info">
+                    <a href="tel:0556582933">0556 582 933</a> - Security - Emergency Response
+                </div>
             </div>
             <div class="number">
                 <div class="icon">🔒</div>
-                <div class="info"><a href="tel:0322296756">0322 296 756</a></div>
+                <div class="info">
+                    <a href="tel:0322296756">0322 296 756</a> - Security - Backup
+                </div>
             </div>
             <div class="number">
-                <div class="icon">🔒</div>
-                <div class="info"><a href="tel:0322296755">0322 296 755</a></div>
+                <div class="icon">🔥</div>
+                <div class="info">
+                    <a href="tel:0322296755">0322 296 755</a> - Fire / Rescue
+                </div>
             </div>
-            <div class="number channel-4">
+            <div class="number">
                 <div class="icon">📡</div>
-                <div class="info"><b>Channel 4 - Two-Way Radio</b></div>
+                <div class="info">
+                    <a href="#">Channel 4</a> - Two-Way Radio
+                </div>
             </div>
         </div>
 
